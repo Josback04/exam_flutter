@@ -11,6 +11,7 @@ class _ImcpageState extends State<Imcpage> {
   late TextEditingController poidsController;
   late TextEditingController tailleController;
   late TextEditingController imc;
+  late final double imcTotal;
 
   @override
   void initState() {
@@ -19,7 +20,7 @@ class _ImcpageState extends State<Imcpage> {
     poidsController = TextEditingController();
     tailleController = TextEditingController();
     imc = TextEditingController();
-    var imcTotal = 0.0;
+    imcTotal = 0.0;
   }
 
   @override
@@ -68,15 +69,19 @@ class _ImcpageState extends State<Imcpage> {
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 15),
-            TextField(
-              readOnly: true,
-              keyboardType: TextInputType.text,
-              controller: imc,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue)),
-              ),
+            Container(
+              decoration: BoxDecoration(border: Border.all()),
+              child: Text('$imcTotal'),
             ),
+            // TextField(
+            //   readOnly: true,
+            //   keyboardType: TextInputType.text,
+            //   controller: imc,
+            //   decoration: const InputDecoration(
+            //     border: OutlineInputBorder(
+            //         borderSide: BorderSide(color: Colors.blue)),
+            //   ),
+            // ),
             const SizedBox(
               height: 75,
             ),
@@ -97,8 +102,9 @@ class _ImcpageState extends State<Imcpage> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    _imc(double.parse(poidsController.value.text),
+                    imcTotal = _imc(double.parse(poidsController.value.text),
                         double.parse(tailleController.value.text));
+
                     setState(() {});
                   },
                   style: ElevatedButton.styleFrom(
