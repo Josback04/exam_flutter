@@ -27,6 +27,7 @@ class _ImcpageState extends State<Imcpage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Calcul Page'),
+        backgroundColor: Colors.blue,
       ),
       body: SingleChildScrollView(
         child: Column(

@@ -15,11 +15,14 @@ class _SecondPageState extends State<SecondPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('FirstPage'),
+        backgroundColor: Colors.blue,
       ),
       body: Column(
         children: [
           ListTile(
-            title: Text('Calcul IMC'),
+            title: Text(
+              'Calcul IMC',
+            ),
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
