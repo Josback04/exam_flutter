@@ -20,12 +20,12 @@ class _SecondPageState extends State<SecondPage> {
         children: [
           ListTile(
             title: Text('Calcul IMC'),
-            onTap: () =>Navigator.push(
+            onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => Imcpage(),
               ),
-            ),,
+            ),
           ),
           ListTile(
             leading: Icon(Icons.check),
